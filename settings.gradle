@@ -1,0 +1,3 @@
+include ':chartlibrary'
+include ':app'
+rootProject.name = "MyChart"
