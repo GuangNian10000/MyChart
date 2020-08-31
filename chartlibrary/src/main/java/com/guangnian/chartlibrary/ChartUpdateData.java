@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 
-import androidx.core.content.ContextCompat;
-
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
@@ -35,8 +33,8 @@ public class ChartUpdateData {
     public void updateLinehart(Activity activity, final List<String> yoyList, final List<String> realList, List<List<Entry>> entries , LineChart lineChart,
                                 final String unit, final List<String>timeList, final String[] labels,int chartType ) {
         Drawable[] drawables = {
-                ContextCompat.getDrawable(activity, R.drawable.chart_thisyear_blue),
-                ContextCompat.getDrawable(activity, R.drawable.chart_callserice_call_casecount)
+                activity.getResources().getDrawable(R.drawable.chart_thisyear_blue),
+                activity.getResources().getDrawable(R.drawable.chart_callserice_call_casecount)
         };
         int[] colors = {Color.parseColor("#45A2FF"), Color.parseColor("#5fd1cc")};
         LineChartEntity lineChartEntity = new LineChartEntity(lineChart, entries, labels, colors, Color.parseColor("#999999"), 12f,timeList);
